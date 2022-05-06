@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
-    private final AccountService accountService;
+    private final SendMoneyService sendMoneyService;
 
     @PostMapping("/send/{sourceAccountId}/{targetAccountId}/{amount}")
     public void sendMoney(@PathVariable Long sourceAccountId, @PathVariable Long targetAccountId, @PathVariable Long amount) {
-        accountService.sendMoney(sourceAccountId, targetAccountId, amount);
+        sendMoneyService.sendMoney(sourceAccountId, targetAccountId, amount);
     }
 }

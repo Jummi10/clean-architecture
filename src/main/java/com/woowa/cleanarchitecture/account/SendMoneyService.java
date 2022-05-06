@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 @RequiredArgsConstructor
 @Service
 @Transactional
-public class AccountService {
+public class SendMoneyService {
     private final AccountRepository accountRepository;
 
     public void sendMoney(Long sourceAccountId, Long targetAccountId, Long amount) {
