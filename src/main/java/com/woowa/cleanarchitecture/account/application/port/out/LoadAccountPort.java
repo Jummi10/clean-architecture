@@ -1,6 +1,6 @@
-package com.woowa.cleanarchitecture.account.domain.port.out;
+package com.woowa.cleanarchitecture.account.application.port.out;
 
-import com.woowa.cleanarchitecture.account.application.Account;
+import com.woowa.cleanarchitecture.account.domain.Account;
 
 import java.time.LocalDateTime;
 

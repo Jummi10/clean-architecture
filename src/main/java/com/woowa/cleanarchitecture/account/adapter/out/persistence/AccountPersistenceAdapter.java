@@ -1,8 +1,8 @@
 package com.woowa.cleanarchitecture.account.adapter.out.persistence;
 
-import com.woowa.cleanarchitecture.account.application.Account;
-import com.woowa.cleanarchitecture.account.domain.port.out.LoadAccountPort;
-import com.woowa.cleanarchitecture.account.domain.port.out.UpdateAccountStatePort;
+import com.woowa.cleanarchitecture.account.application.port.out.LoadAccountPort;
+import com.woowa.cleanarchitecture.account.application.port.out.UpdateAccountStatePort;
+import com.woowa.cleanarchitecture.account.domain.Account;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.woowa.cleanarchitecture.account.application;
+package com.woowa.cleanarchitecture.account.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
