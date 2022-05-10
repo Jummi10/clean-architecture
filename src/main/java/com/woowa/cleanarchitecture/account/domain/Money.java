@@ -7,6 +7,10 @@ public record Money(BigInteger amount) {
         return new Money(money1.amount.add(money2.amount));
     }
 
+    public static Money of(long amount) {
+        return new Money(BigInteger.valueOf(amount));
+    }
+
     public Money negate() {
         return new Money(amount.negate());
     }
