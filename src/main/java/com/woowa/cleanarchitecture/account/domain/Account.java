@@ -40,8 +40,8 @@ public class Account {
                 id,
                 id,
                 targetAccountId,
-                now(),
-                money
+                money,
+                now()
         );
 
         activityWindow.addActivity(withdrawal);
@@ -54,8 +54,8 @@ public class Account {
                 id,
                 sourceAccountId,
                 id,
-                now(),
-                money
+                money,
+                now()
         );
 
         activityWindow.addActivity(deposit);
