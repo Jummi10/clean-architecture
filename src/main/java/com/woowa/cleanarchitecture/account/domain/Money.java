@@ -14,4 +14,8 @@ public record Money(BigInteger amount) {
     public boolean isPositiveOrZero() {
         return amount.compareTo(BigInteger.ZERO) >= 0;
     }
+
+    public boolean isGreaterThan(Money money) {
+        return amount.compareTo(money.amount) >= 1;
+    }
 }
