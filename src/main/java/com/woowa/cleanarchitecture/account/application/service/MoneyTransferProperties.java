@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigInteger;
-
 /**
  * Configuration properties for money transfer use cases
  */
@@ -14,5 +12,5 @@ import java.math.BigInteger;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MoneyTransferProperties {
-    private Money maximumTransferThreshold = new Money(BigInteger.valueOf(1_000_000L));
+    private Money maximumTransferThreshold = Money.of(1_000_000L);
 }
