@@ -1,12 +1,13 @@
 package com.woowa.cleanarchitecture.account.domain;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import static java.time.LocalDateTime.now;
 
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {
 
     private AccountId id;
@@ -20,6 +21,14 @@ public class Account {
      * 이 계좌의 최근 모든 입출금 활동
      */
     private ActivityWindow activityWindow;
+
+    public static Account withoutId(Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(null, baselineBalance, activityWindow);
+    }
+
+    public static Account withId(AccountId accountId, Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(accountId, baselineBalance, activityWindow);
+    }
 
     public boolean withdraw(Money money, AccountId targetAccountId) {
         if (!mayWithdraw(money)) {
