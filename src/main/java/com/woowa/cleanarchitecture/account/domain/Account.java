@@ -4,9 +4,10 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Optional;
+
 import static java.time.LocalDateTime.now;
 
-@Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {
 
@@ -15,11 +16,13 @@ public class Account {
     /**
      * activityWindow의 첫번째 활동 바로 전의 계좌 잔고
      */
+    @Getter
     private Money baselineBalance;
 
     /**
      * 이 계좌의 최근 모든 입출금 활동
      */
+    @Getter
     private ActivityWindow activityWindow;
 
     public static Account withoutId(Money baselineBalance, ActivityWindow activityWindow) {
@@ -60,6 +63,10 @@ public class Account {
 
         activityWindow.addActivity(deposit);
         return true;
+    }
+
+    public Optional<AccountId> getId() {
+        return Optional.ofNullable(id);
     }
 
     /**

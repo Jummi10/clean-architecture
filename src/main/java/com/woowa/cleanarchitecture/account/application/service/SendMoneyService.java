@@ -28,8 +28,10 @@ public class SendMoneyService implements SendMoneyUseCase {
         Account sourceAccount = loadAccountPort.loadAccount(command.getSourceAccountId(), baselineDate);
         Account targetAccount = loadAccountPort.loadAccount(command.getTargetAccountId(), baselineDate);
 
-        AccountId sourceAccountId = sourceAccount.getId();
-        AccountId targetAccountId = targetAccount.getId();
+        AccountId sourceAccountId = sourceAccount.getId()
+                .orElseThrow(() -> new IllegalStateException("expected source account ID not to be empty"));
+        AccountId targetAccountId = targetAccount.getId()
+                .orElseThrow(() -> new IllegalStateException("expected target account ID not to be empty"));
 
         accountLock.lockAccount(sourceAccountId);
         if (!sourceAccount.withdraw(command.getMoney(), targetAccountId)) {
