@@ -40,7 +40,7 @@ public class SendMoneyService implements SendMoneyUseCase {
         }
 
         accountLock.lockAccount(targetAccountId);
-        if (!sourceAccount.deposit(command.getMoney(), sourceAccountId)) {
+        if (!targetAccount.deposit(command.getMoney(), sourceAccountId)) {
             accountLock.releaseAccount(sourceAccountId);
             accountLock.releaseAccount(targetAccountId);
             return false;
