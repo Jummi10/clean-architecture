@@ -26,4 +26,12 @@ public record Money(BigInteger amount) {
     public boolean isGreaterThan(Money money) {
         return amount.compareTo(money.amount) >= 1;
     }
+
+    public Money minus(Money money) {
+        return new Money(this.amount.subtract(money.amount));
+    }
+
+    public Money plus(Money money) {
+        return new Money(this.amount.add(money.amount));
+    }
 }
