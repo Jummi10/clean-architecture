@@ -1,5 +1,7 @@
 package com.woowa.cleanarchitecture.account.application.port.in;
 
+import javax.validation.Valid;
+
 public interface SendMoneyUseCase {
-    boolean sendMoney(SendMoneyCommand command);
+    boolean sendMoney(@Valid SendMoneyCommand command);
 }
