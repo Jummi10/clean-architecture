@@ -33,7 +33,7 @@ public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccount
 
     @Override
     public void updateActivities(Account account) {
-        for (Activity activity : account.getActivityWindow().activities()) {
+        for (Activity activity : account.getActivityWindow().getActivities()) {
             if (activity.activityId() == null) {
                 activityRepository.save(accountMapper.mapDomainEntityToJpaEntity(activity));
             }

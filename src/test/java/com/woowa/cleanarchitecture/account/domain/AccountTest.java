@@ -30,7 +30,7 @@ class AccountTest {
 
         assertAll(
                 () -> assertThat(success).isTrue(),
-                () -> assertThat(account.getActivityWindow().activities()).hasSize(3),
+                () -> assertThat(account.getActivityWindow().getActivities()).hasSize(3),
                 () -> assertThat(account.calculateBalance()).isEqualTo(Money.of(1000L))
         );
     }
