@@ -5,15 +5,15 @@ import com.woowa.cleanarchitecture.account.application.port.out.UpdateAccountSta
 import com.woowa.cleanarchitecture.account.domain.Account;
 import com.woowa.cleanarchitecture.account.domain.AccountId;
 import com.woowa.cleanarchitecture.account.domain.Activity;
+import com.woowa.cleanarchitecture.common.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Component
+@PersistenceAdapter
 public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccountStatePort {
     private final AccountRepository accountRepository;
     private final ActivityRepository activityRepository;

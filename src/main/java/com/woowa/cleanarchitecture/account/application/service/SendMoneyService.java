@@ -7,12 +7,14 @@ import com.woowa.cleanarchitecture.account.application.port.out.LoadAccountPort;
 import com.woowa.cleanarchitecture.account.application.port.out.UpdateAccountStatePort;
 import com.woowa.cleanarchitecture.account.domain.Account;
 import com.woowa.cleanarchitecture.account.domain.AccountId;
+import com.woowa.cleanarchitecture.common.UseCase;
 import lombok.RequiredArgsConstructor;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
+@UseCase
 @Transactional
 public class SendMoneyService implements SendMoneyUseCase {
     private final LoadAccountPort loadAccountPort;
