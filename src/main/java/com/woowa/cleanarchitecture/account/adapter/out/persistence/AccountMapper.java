@@ -40,7 +40,7 @@ public class AccountMapper {
 
     ActivityJpaEntity mapDomainEntityToJpaEntity(Activity activity) {
         return new ActivityJpaEntity(
-                activity.activityId().id(),
+                activity.activityId() == null ? null : activity.activityId().id(),
                 activity.ownerAccountId().id(),
                 activity.sourceAccountId().id(),
                 activity.targetAccountId().id(),
