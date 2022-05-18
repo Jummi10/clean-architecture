@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "account")
 @Entity
-public class AccountJpaEntity {
+class AccountJpaEntity {
     @Id
     @GeneratedValue
     private Long id;
