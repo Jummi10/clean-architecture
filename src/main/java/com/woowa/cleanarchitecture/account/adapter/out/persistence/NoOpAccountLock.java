@@ -5,7 +5,7 @@ import com.woowa.cleanarchitecture.account.domain.AccountId;
 import org.springframework.stereotype.Component;
 
 @Component
-class NoOpAccountLock implements AccountLock {
+public class NoOpAccountLock implements AccountLock {
     @Override
     public void lockAccount(AccountId accountId) {
         // do nothing

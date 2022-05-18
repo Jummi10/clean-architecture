@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "activity")
 @Entity
-class ActivityJpaEntity {
+public class ActivityJpaEntity {
     @Id
     @GeneratedValue
     private Long id;
