@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class AccountMapper {
+class AccountMapper {
     Account mapJpaEntityToDomainEntity(AccountJpaEntity account,
                                        List<ActivityJpaEntity> activities,
                                        Long withdrawalBalance,
