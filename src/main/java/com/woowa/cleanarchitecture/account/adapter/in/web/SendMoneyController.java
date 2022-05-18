@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @WebAdapter
 @RequiredArgsConstructor
 @RestController
-class SendMoneyController {
+public class SendMoneyController {
     private final SendMoneyUseCase sendMoneyUseCase;
 
     @PostMapping("/accounts/send/{sourceAccountId}/{targetAccountId}/{amount}")
-    void sendMoney(@PathVariable Long sourceAccountId, @PathVariable Long targetAccountId, @PathVariable Long amount) {
+    public void sendMoney(@PathVariable Long sourceAccountId, @PathVariable Long targetAccountId,
+                          @PathVariable Long amount) {
         SendMoneyCommand sendMoneyCommand = new SendMoneyCommand(
                 new AccountId(sourceAccountId),
                 new AccountId(targetAccountId),
